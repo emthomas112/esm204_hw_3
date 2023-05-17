@@ -62,3 +62,4 @@ MEC = 300
 ### Question 3
 #### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs? What is the “benefit” to consumers under the status quo? What is the “benefit” to producers under the status quo? What is the environmental cost under the status quo?
 
+### Question 4 
