@@ -57,7 +57,8 @@ QNonDAC = 158034.280239 - 2.730926(Price)
 ### Question 2
 #### One kilogram (kg) of lithium is estimated to cause $300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
 
-MEC = 300
+MEC = $300/kg * 63kg/car
+MEC = $18,900
 
 ### Question 3
 #### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs? What is the “benefit” to consumers under the status quo? What is the “benefit” to producers under the status quo? What is the environmental cost under the status quo?
