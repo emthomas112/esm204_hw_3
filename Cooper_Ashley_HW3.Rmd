@@ -77,7 +77,7 @@ Price = 158034.280239 - 2.730926(QNonDAC)
 
 ### Question 3
 
-#### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs? What is the "benefit" to consumers under the status quo? What is the "benefit" to producers under the status quo? What is the environmental cost under the status quo?
+#### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs?
 
 ```{r}
 q_dac <- function(price){
@@ -90,27 +90,110 @@ q_non_dac <- function(price){
     return(quantity)
 }
 
-# q_agg <- function(price){
-#   quantitty = q_dac(price) + qnon_dac(price)
-#   return(quantity)
-# }
-
 q_agg <- function(price){
   if(price > 116854.835741) {
     quantity = (158034.280239 - price)/2.730926
     return(quantity)
     }
-if(x <= 116854.835741) {
-  quantity = q_dac(price) + qnon_dac(price)
+if(price <= 116854.835741) {
+  quantity = q_dac(price) + q_non_dac(price)
   return(quantity)
 }
 
 }
 
 
-q_agg(116855)
-q_agg(0
-      )
+# Qagg = (116854.835741 - price)/6.611437) + (158034.280239 - price)/2.730926
+#         17674.65 - price/6.611437 + 57868.39 - price/2.730926
+#         75543.04 - -0.5174292 * price
+
+
+
+### The current EV price (without any intervention) is $50,000 per vehicle.
+### To get the slope of the Supply Curve, P = a + bQ
+### b = (P2 - P1)/(Q2 - Q1)
+### Goes through the intercept, so (Q1, P1) = (0,0) ; P2 = $50,000 (current EV price) and Q1 = Qagg($50,000)
+
+# q_agg(50000)
+# 49671.58
+
+supp_slope <- (50000)/q_agg(50000)
+# supp_slope
+### 1.006612
 ```
 
+Aggregate Annual Demand Equation
+If price > 116854.835741:
+    Qagg = (158034.280239 - Price)/2.730926
+
+If price <= 116854.835741):
+    Qagg = 75543.04 - -0.5174292(Price)
+
+Supply Equation
+Price = 1.006612(Qagg)
+
+#### What is the "benefit" to producers under the status quo? What is the environmental cost under the status quo?
+
+```{r}
+cs <- 1/2*(116854.835741 - 50000)*q_dac(50000) + 1/2*(158034.280239 - 50000)*q_non_dac(50000)
+# cs
+# 2474913243
+
+ps <- 1/2*50000*49671.58
+# ps
+# 1241789500
+```
+
+Benefit to Consumers = Consumer Surplus = $2,474,913,243
+
+Benefit to Producers = Producer Surplus = $1,241,789,500
+
+#### What is the environmental cost under the status quo?
+
+```{r}
+### Environmental cost = MEC ($18,900) * Qagg(50,000)
+env_cost <- 18900 * 49671.58
+# env_cost
+# 938792862
+```
+Environmental Costs = $938,792,862
+
 ### Question 4
+#### How is the current consumer benefit divided between DAC and non-DAC consumers?
+```{r}
+cs_dac <- 1/2*(116854.835741 - 50000)*q_dac(50000)
+cs_non_dac <- 1/2*(158034.280239 - 50000)*q_non_dac(50000)
+
+consumer_benefit_dac <- cs_dac/cs
+consumer_benefit_non_dac <- cs_non_dac/cs
+
+# consumer_benefit_dac
+# 0.1365777
+# consumer_benefit_non_dac
+# 0.8634223
+```
+
+Currently disadvantaged communities get ~13.66% of the total consumer benefits from EVs, while non-disadvantaged communities enjoy ~86.34% of the total consumer benefits.
+
+### Question 5
+#### Derive the optimal EV tax (in $ per vehicle) to internalize the lithium mining externality. Noting that recent research has shown that DACs are far more likely to contain mining activity, assume that the mining externality is borne entirely by the DAC group. What would be the effects of this tax on (a) The amount of EVs produced and consumed
+
+```{r}
+### Optimal Tax = MEC at Q*
+### Because MEC is constant, optimal tax = $18,900/EV
+```
+
+
+#### (b) The price of EVs
+
+The price of each EV would increase by $18,900.
+
+#### (c) Overall welfare of non-DAC consumers
+
+#### (d) Overall welfare of DAC consumers
+
+#### (e) EV producers
+
+#### (f) Total environmental damage
+
+#### (g) Total tax revenue generated
