@@ -1,6 +1,6 @@
 ---
 title: "Homework 3"
-author: "Ashley Cooper"
+author: "Ashley Cooper, Chloe Swick, Eleanor Thomas"
 date: "Due 5/19/23"
 output:
   html_document:
@@ -176,19 +176,33 @@ consumer_benefit_non_dac <- cs_non_dac/cs
 Currently disadvantaged communities get ~13.66% of the total consumer benefits from EVs, while non-disadvantaged communities enjoy ~86.34% of the total consumer benefits.
 
 ### Question 5
-#### Derive the optimal EV tax (in $ per vehicle) to internalize the lithium mining externality. Noting that recent research has shown that DACs are far more likely to contain mining activity, assume that the mining externality is borne entirely by the DAC group. What would be the effects of this tax on (a) The amount of EVs produced and consumed
+#### Derive the optimal EV tax (in $ per vehicle) to internalize the lithium mining externality.
+
+Optimal Tax = MEC at Q*
+
+Because MEC is constant, optimal tax = $18,900/EV
+
+#### Noting that recent research has shown that DACs are far more likely to contain mining activity, assume that the mining externality is borne entirely by the DAC group. What would be the effects of this tax on (a) The amount of EVs produced and consumed
 
 ```{r}
-### Optimal Tax = MEC at Q*
-### Because MEC is constant, optimal tax = $18,900/EV
-```
+q_agg(50000)
+# 49671.58
 
+q_agg(68900)
+# 39892.16
+
+q_agg(50000) - q_agg(68900)
+# 9779.412
+```
+The quantity of EVs would decrease by ~ 9,780 cars, from 49,672 EVs to 39,892 EVs.
 
 #### (b) The price of EVs
 
-The price of each EV would increase by $18,900.
+The price of each EV would increase by $18,900 from $50,000 to $68,900.
 
 #### (c) Overall welfare of non-DAC consumers
+
+
 
 #### (d) Overall welfare of DAC consumers
 
