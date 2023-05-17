@@ -59,6 +59,8 @@ Price = 116854.835741 - 6.611437(QDAC)
 
 6.611437(QDAC) = 116854.835741 - Price
 
+
+
 [*QDAC = (116854.835741 - Price)/6.611437*]{.underline}
 
 Price = 158034.280239 - 2.730926(QNonDAC)
@@ -78,8 +80,37 @@ Price = 158034.280239 - 2.730926(QNonDAC)
 #### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs? What is the "benefit" to consumers under the status quo? What is the "benefit" to producers under the status quo? What is the environmental cost under the status quo?
 
 ```{r}
-# q_agg <- q_dac + qnon_dac
-# q_dac <- function(price)
+q_dac <- function(price){
+    quantity = (116854.835741 - price)/6.611437
+    return(quantity)
+}
+
+q_non_dac <- function(price){
+    quantity = (158034.280239 - price)/2.730926
+    return(quantity)
+}
+
+# q_agg <- function(price){
+#   quantitty = q_dac(price) + qnon_dac(price)
+#   return(quantity)
+# }
+
+q_agg <- function(price){
+  if(price > 116854.835741) {
+    quantity = (158034.280239 - price)/2.730926
+    return(quantity)
+    }
+if(x <= 116854.835741) {
+  quantity = q_dac(price) + qnon_dac(price)
+  return(quantity)
+}
+
+}
+
+
+q_agg(116855)
+q_agg(0
+      )
 ```
 
 ### Question 4
