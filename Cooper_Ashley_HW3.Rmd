@@ -2,7 +2,10 @@
 title: "Homework 3"
 author: "Ashley Cooper"
 date: "Due 5/19/23"
-output: html_document
+output:
+  html_document:
+    code_folding: hide
+    theme: flatly
 ---
 
 ```{r setup, echo = TRUE, warning = FALSE, message = FALSE, results = FALSE, include = FALSE}
@@ -16,9 +19,10 @@ library(cowplot)
 ```
 
 ### Question 1
+
 #### Run linear regressions (with an intercept) to estimate the demand curves for DAC and non-DAC consumers. What are 2-3 reasons you can think that may explain the differences in demand you estimate?
 
-```{r}
+```{r, results = TRUE}
 ev_clean <- read_csv(here("HW3_data.csv")) %>% 
   janitor::clean_names() %>% 
   rename("price" = "price_dollars",
@@ -51,16 +55,31 @@ demand_plot <- ggplot(data = ev_pivot) +
 demand_plot
 ```
 
-QDAC = 116854.835741 - 6.611437(Price)
-QNonDAC = 158034.280239 - 2.730926(Price)
+Price = 116854.835741 - 6.611437(QDAC)
+
+6.611437(QDAC) = 116854.835741 - Price
+
+[*QDAC = (116854.835741 - Price)/6.611437*]{.underline}
+
+Price = 158034.280239 - 2.730926(QNonDAC)
+
+2.730926(QNonDAC) = 158034.280239 - Price
+
+[*QNonDAC = (158034.280239 - Price)/2.730926*]{.underline}
 
 ### Question 2
-#### One kilogram (kg) of lithium is estimated to cause $300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
 
-MEC = $300/kg * 63kg/car
-MEC = $18,900
+#### One kilogram (kg) of lithium is estimated to cause \$300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
+
+[*MEC = \$300/kg \* 63kg/car MEC = \$18,900*]{.underline}
 
 ### Question 3
-#### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs? What is the “benefit” to consumers under the status quo? What is the “benefit” to producers under the status quo? What is the environmental cost under the status quo?
 
-### Question 4 
+#### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs? What is the "benefit" to consumers under the status quo? What is the "benefit" to producers under the status quo? What is the environmental cost under the status quo?
+
+```{r}
+# q_agg <- q_dac + qnon_dac
+# q_dac <- function(price)
+```
+
+### Question 4
