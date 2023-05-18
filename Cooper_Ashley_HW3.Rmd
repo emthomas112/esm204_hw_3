@@ -257,5 +257,41 @@ This is a decrease of **$184,831,038** from the non taxed PS of $938,792,862
 <br>
 Total tax revenue generated is the same as the total environmental damage, $184,831,038 because the optimal tax was evaluated to cover all of the environmental damage.
 
-6. Now, assume that all revenue from the EV tax will be redistributed to the consumers in proportion to their pre-tax consumption. For example, if 80% of the EVs were consumed by non-DAC consumers, then they get 80% of the tax revenue. Additionally, consider that emerging scientific evidence suggests the true environmental damages from lithium mining may be much higher than $300. For a range of values of external costs per kg of lithium ($350, $400, $450, and $500 per kg), calculate the effects of an EV tax on:1
+### Question 6
+
+#### Now, assume that all revenue from the EV tax will be redistributed to the consumers in proportion to their pre-tax consumption. For example, if 80% of the EVs were consumed by non-DAC consumers, then they get 80% of the tax revenue. Additionally, consider that emerging scientific evidence suggests the true environmental damages from lithium mining may be much higher than $300. For a range of values of external costs per kg of lithium ($350, $400, $450, and $500 per kg), calculate the effects of an EV tax on:1
+
+#### (a) Overall welfare of non-DAC consumers 
+
+
+#### (b) Overall welfare of DAC consumers
+
+
+#### (c) EV producers
+
+
+
+### Question 7
+
+#### Now, consider the fact that the purchase of EVs not only leads to lithium mining, but also helps mitigate climate change by replacing gasoline cars. Suppose that climate change damages fall mostly outside California, to a lesser extent on DAC consumers, and not at all on non-DAC consumers. Qualitatively answer the following (in 1-3 sentences each):
+
+
+#### (a) How does the presence of climate change damages from gasoline cars affect the optimal EV tax in California?
+<br>
+If we consider climate change damages there would be a societal benefit from the adoption of EVs. Depending on how large this benefit is calculated to be, it could potentially overwhelm the environmental harm from lithium mining. In this situation the optimal tax would be lower than if we just took into account the damages from lithuim mining. 
+<br>
+#### (b) Assuming tax revenue does not get returned to consumers, are non-DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
+<br>
+Non-DAC consumers are more likely to support this tax because it would be lower than the tax that only accounted for damages from lithium mining. Since Non-DAC consumers are more likely to purchase an EV, and they are not suffering any of the damages from lithium mining
+
+<br>
+#### (c) Assuming tax revenue does not get returned to consumers, are DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
+<br>
+DAC consumers are more likely to not support this new tax because they are the ones experiencing harm from the lithium mining. If we compare this new tax to the tax where DAC consumers received a portion of the tax revenue back, and they wouldn't be receiving any tax benefits from this tax, they would oppose it. 
+
+
+
+
+<br><br><br>
+
 
