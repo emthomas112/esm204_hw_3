@@ -57,35 +57,27 @@ demand_plot <- ggplot(data = ev_pivot) +
 demand_plot
 ```
 
-Price = 116854.835741 - 6.611437(QDAC)
-<br>
+Price = 116854.835741 - 6.611437(QDAC) <br>
 
 6.611437(QDAC) = 116854.835741 - Price
 
+[*QDAC = (116854.835741 - Price)/6.611437*]{.underline} <br>
 
+Price = 158034.280239 - 2.730926(QNonDAC) <br>
 
-[*QDAC = (116854.835741 - Price)/6.611437*]{.underline}
-<br>
-
-Price = 158034.280239 - 2.730926(QNonDAC)
-<br>
-
-2.730926(QNonDAC) = 158034.280239 - Price
-<br>
+2.730926(QNonDAC) = 158034.280239 - Price <br>
 
 [*QNonDAC = (158034.280239 - Price)/2.730926*]{.underline}
 
 #### What are 2-3 reasons you can think that may explain the differences in demand you estimate?
-<br>
-1.) DAC communities have less money to spend on more expensive EVs, so they have an overall lower demand for EVs <br>
-2.) DAC communities may have less access to EV charging infrastructure, or other incentives for using electricity such as rooftop solar <br>
-3.) Non-DAC communities have a more elastic demand curve, because they have more alternative options for transportation.
+
+<br> 1.) DAC communities have less money to spend on more expensive EVs, so they have an overall lower demand for EVs <br> 2.) DAC communities may have less access to EV charging infrastructure, or other incentives for using electricity such as rooftop solar <br> 3.) Non-DAC communities have a more elastic demand curve, because they have more alternative options for transportation.
 
 <br>
 
-### Question 2 
-<br>
-One kilogram (kg) of lithium is estimated to cause \$300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
+### Question 2
+
+<br> One kilogram (kg) of lithium is estimated to cause \$300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
 
 [*MEC = \$300/kg \* 63kg/car MEC = \$18,900*]{.underline}
 
@@ -134,16 +126,23 @@ if(price <= 116854.835741) {
 supp_slope <- (50000)/q_agg(50000)
 # supp_slope
 ### 1.006612
+
+# 158034.280239/2.730926
+# 1/2.730926
 ```
 
 Aggregate Annual Demand Equation
-If price > 116854.835741: <br>
-    Qagg = (158034.280239 - Price)/2.730926
 
-If price <= 116854.835741): <br>
-    Qagg = 75543.04 - -0.5174292(Price)
+If price \> 116854.835741: <br>
+
+Qagg = 57868.39 - 0.3661762(Price)
+
+If price \<= 116854.835741: <br>
+
+Qagg = 75543.04 - 0.5174292(Price)
 
 Supply Equation <br>
+
 Price = 1.006612(Qagg)
 
 #### What is the "benefit" to producers under the status quo? What is the environmental cost under the status quo?
@@ -158,10 +157,9 @@ ps <- 1/2*50000*49671.58
 # 1241789500
 ```
 
-Benefit to Consumers = Consumer Surplus = $2,474,913,243
-<br>
+Benefit to Consumers = Consumer Surplus = \$2,474,913,243 <br>
 
-Benefit to Producers = Producer Surplus = $1,241,789,500
+Benefit to Producers = Producer Surplus = \$1,241,789,500
 
 #### What is the environmental cost under the status quo?
 
@@ -171,11 +169,13 @@ env_cost <- 18900 * 49671.58
 # env_cost
 # 938792862
 ```
-Environmental Costs = $938,792,862
+
+Environmental Costs = \$938,792,862
 
 ### Question 4 {.tabset}
 
 #### How is the current consumer benefit divided between DAC and non-DAC consumers?
+
 ```{r}
 cs_dac <- 1/2*(116854.835741 - 50000)*q_dac(50000)
 #cs_dac -- $338,017,973
@@ -191,18 +191,17 @@ consumer_benefit_non_dac <- cs_non_dac/cs
 # 0.8634223
 ```
 
-Currently disadvantaged communities get ~13.66% of the total consumer benefits from EVs, while non-disadvantaged communities enjoy ~86.34% of the total consumer benefits.
+Currently disadvantaged communities get \~13.66% of the total consumer benefits from EVs, while non-disadvantaged communities enjoy \~86.34% of the total consumer benefits.
 
 ### Question 5 {.tabset}
-<br> 
 
-#### Derive the optimal EV tax (in $ per vehicle) to internalize the lithium mining externality.
+<br>
 
-Optimal Tax = MEC at Q*
+#### Derive the optimal EV tax (in \$ per vehicle) to internalize the lithium mining externality.
+
+Optimal Tax = MEC at Q\*
 
 Because MEC is constant, optimal tax = \$18,900/EV
-
-
 
 ```{r}
 q_agg(50000)
@@ -216,37 +215,34 @@ q_agg(50000) - q_agg(68900)
 ```
 
 #### (a) The amount of EVs produced and consumed
-The quantity of EVs would decrease by **~ 9,780** cars, from 49,672 EVs to **39,892 EVs**.
+
+The quantity of EVs would decrease by **\~ 9,780** cars, from 49,672 EVs to **39,892 EVs**.
 
 #### (b) The price of EVs
 
-The price of each EV would increase by **$18,900** from \$50,000 to **\$68,900**.
+The price of each EV would increase by **\$18,900** from \$50,000 to **\$68,900**.
 
 #### (c) Overall welfare of non-DAC consumers
+
 ```{r}
 cs_non_dac_tax <- 1/2*(158034.280239 - 68900)*q_non_dac(68900)
 # 1,454,620,139
 ```
 
-Benefit to non-DAC Consumers w/tax = **$1,454,620,139**
-<br>
-This is a decrease of **$682,275,131** from a non taxed CS of $\2,136,895,270 
-
+Benefit to non-DAC Consumers w/tax = **\$1,454,620,139** <br> This is a decrease of **\$682,275,131** from a non taxed CS of \$\\2,136,895,270
 
 #### (d) Overall welfare of DAC consumers
+
 ```{r}
 cs_dac_tax <- 1/2*(116854.835741 - 68900)*q_dac(68900)
 cs_dac_tax
 # 173,915,767
 ```
 
-Benefit to DAC Consumers w/tax = **\$173,915,767**
-<br>
-This is a decrease of **\$164,102,206** from the non taxed CS of $338,017,973 
-overall welfare for DAC will be their benefit after the tax is implemented (\$173,915,767) minus the environmental damage after the tax of \$753,961,824. The DAC consumers will have an overall welfare of **-\$580,046,057**. 
-
+Benefit to DAC Consumers w/tax = **\$173,915,767** <br> This is a decrease of **\$164,102,206** from the non taxed CS of \$338,017,973 The overall welfare for DAC will be their benefit after the tax is implemented (\$173,915,767) minus the environmental damage after the tax of \$753,961,824. The DAC consumers will have an overall welfare of **-\$580,046,057**.
 
 #### (e) Benefit to EV producers
+
 ```{r}
 ps <- 1/2*50000*49671.58
 # ps
@@ -255,11 +251,10 @@ ps_tax <- 1/2*68900*39892.16
 #1,374,284,912
 ```
 
-Benefit to Producers w/tax = **\$1,374,284,912**
-This is a decrease of **\$ 132,495,412**from the non taxed PS of \$1,241,789,500 
-
+Benefit to Producers w/tax = **\$1,374,284,912** This is a decrease of **\$ 132,495,412**from the non taxed PS of \$1,241,789,500
 
 #### (f) Total environmental damage
+
 ```{r}
 ### Environmental cost = MEC ($18,900) * Qagg(50,000)
 #q_agg(68900)
@@ -272,13 +267,11 @@ env_cost_tax <- 18900 * 39892.16
 #753,961,824
 ```
 
-Environmental Damage w/tax = **$753,961,824**
-This is a decrease of **$184,831,038** from the non taxed PS of $938,792,862 
-
+Environmental Damage w/tax = **\$753,961,824** This is a decrease of **\$184,831,038** from the non taxed PS of \$938,792,862
 
 #### (g) Total tax revenue generated
-<br>
-Total tax revenue generated is the same as the total environmental damage, **$184,831,038** because the optimal tax was evaluated to cover all of the environmental damage.
+
+<br> Total tax revenue generated is the same as the total environmental damage, **\$184,831,038** because the optimal tax was evaluated to cover all of the environmental damage.
 
 ### Question 6 {.tabset}
 
@@ -313,9 +306,7 @@ rev_500<- q_agg(tax_500+50000)*tax_500
 # 1051235503
 ```
 
-
-#### (a) Overall welfare of non-DAC consumers 
-
+#### (a) Overall welfare of non-DAC consumers
 
 ```{r}
 q_non_dac(50000)
@@ -329,7 +320,6 @@ q_non_dac(50000)
 ## 350
 non_dac_q_350<- q_non_dac(tax_350+50000)
 
-
 cs_non_dac_350 <- 1/2*((158034.280239 - (tax_350+50000))*non_dac_q_350)
 cs_non_dac_350
 #1353624457
@@ -337,13 +327,11 @@ cs_non_dac_350
 non_dac_welfare_350 <- cs_non_dac+(.7964228*rev_350)
 non_dac_welfare_350
 #2664149030
-
 ```
 
 ```{r}
 ## 400
 non_dac_q_400<- q_non_dac(tax_400+50000)
-
 
 cs_non_dac_400 <- 1/2*((158034.280239 - (tax_400+50000))*non_dac_q_400)
 cs_non_dac_400
@@ -358,7 +346,6 @@ non_dac_welfare_400
 ## 450
 non_dac_q_450<- q_non_dac(tax_450+50000)
 
-
 cs_non_dac_450 <- 1/2*((158034.280239 - (tax_450+50000))*non_dac_q_450)
 cs_non_dac_450
 #1162533243
@@ -368,11 +355,9 @@ non_dac_welfare_450
 #1952839256
 ```
 
-
 ```{r}
 ## 500
 non_dac_q_500<- q_non_dac(tax_500+50000)
-
 
 cs_non_dac_500 <- 1/2*((158034.280239 - (tax_500+50000))*non_dac_q_500)
 cs_non_dac_500
@@ -383,14 +368,7 @@ non_dac_welfare_500
 #1909665633
 ```
 
-<br>
-Overall Welfare w/ no redistribution: \$1,454,620,139 <br>
-welfare w/ redistribution @ \$300:= \$1,454,620,139 + .7964($753,961,824) = **\$2,055,075,336** <br>
-welfare w/ redistribution @ \$350:= \$2,664,149,030     <br>
-welfare w/ redistribution @ \$400:= \$1,991,468,289     <br>
-welfare w/ redistribution @ \$450:= \$1,952,839,256     <br>
-welfare w/ redistribution @ \$500:= \$1,909,665,633     <br>
-
+<br> Overall Welfare w/ no redistribution: \$1,454,620,139 <br> welfare w/ redistribution \@ \$300:= \$1,454,620,139 + .7964(\$753,961,824) = **\$2,055,075,336** <br> welfare w/ redistribution \@ \$350:= \$2,664,149,030 <br> welfare w/ redistribution \@ \$400:= \$1,991,468,289 <br> welfare w/ redistribution \@ \$450:= \$1,952,839,256 <br> welfare w/ redistribution \@ \$500:= \$1,909,665,633 <br>
 
 #### (b) Overall welfare of DAC consumers
 
@@ -420,7 +398,6 @@ dac_welfare_350
 
 ```
 
-
 ```{r}
 ## 400
 dac_q_400<- q_non_dac(tax_400+50000)
@@ -449,7 +426,6 @@ dac_welfare_450
 #-228549848
 ```
 
-
 ```{r}
 ## 500
 dac_q_500<- q_non_dac(tax_500+50000)
@@ -464,16 +440,7 @@ dac_welfare_500
 #-341817985
 ```
 
-
-<br>
-Overall Welfare w/ no redistribution: -\$580,046,057 <br>
-welfare w/ redistribution @ \$300: -\$580,046,057 + .2036($753,961,824) = **-\$426,539,430** <br>
-welfare w/ redistribution @ \$350:= \$33,420,504   <br>
-welfare w/ redistribution @ \$400:= -\$103,470,351   <br>
-welfare w/ redistribution @ \$450:= -\$228,549,848   <br>
-welfare w/ redistribution @ \$500:= -\$341,817,985   <br>
-
-
+<br> Overall Welfare w/ no redistribution: -\$580,046,057 <br> welfare w/ redistribution \@ \$300: -\$580,046,057 + .2036(\$753,961,824) = **-\$426,539,430** <br> welfare w/ redistribution \@ \$350:= \$33,420,504 <br> welfare w/ redistribution \@ \$400:= -\$103,470,351 <br> welfare w/ redistribution \@ \$450:= -\$228,549,848 <br> welfare w/ redistribution \@ \$500:= -\$341,817,985 <br>
 
 #### (c) EV producers
 
@@ -495,52 +462,24 @@ ps_450 <- 1/2*(tax_450+50000)*q_agg(tax_450+50000)
 #1371221278
 ```
 
-
 ```{r}
 ## 500
 ps_500 <- 1/2*(tax_500+50000)*q_agg(tax_500+50000)
 #1359931642
 ```
 
+Producer Surplus \@ \$350: = \$1,378,397,977 <br> Producer Surplus \@ \$400: = \$1,377,376,723 <br> Producer Surplus \@ \$450: = \$1,371,221,278 <br> Producer Surplus \@ \$500: = \$1,359,931,642 <br>
 
-Producer Surplus @ \$350: = \$1,378,397,977   <br>
-Producer Surplus @ \$400: = \$1,377,376,723   <br>
-Producer Surplus @ \$450: = \$1,371,221,278   <br>
-Producer Surplus @ \$500: = \$1,359,931,642   <br>
-
-
-
-### Question 7 
+### Question 7
 
 <br> Now, consider the fact that the purchase of EVs not only leads to lithium mining, but also helps mitigate climate change by replacing gasoline cars. Suppose that climate change damages fall mostly outside California, to a lesser extent on DAC consumers, and not at all on non-DAC consumers. Qualitatively answer the following (in 1-3 sentences each):
 
 <br>
 
-(a) How does the presence of climate change damages from gasoline cars affect the optimal EV tax in California?
-<br>
-<br>
-If we consider climate change damages there would be a societal benefit from the adoption of EVs. Depending on how large this benefit is calculated to be, it could potentially overwhelm the environmental harm from lithium mining. In this situation the optimal tax would be lower than if we just took into account the damages from lithuim mining. 
-<br>
+(a) How does the presence of climate change damages from gasoline cars affect the optimal EV tax in California? <br> <br> If we consider climate change damages there would be a societal benefit from the adoption of EVs. Depending on how large this benefit is calculated to be, it could potentially overwhelm the environmental harm from lithium mining. In this situation the optimal tax would be lower than if we just took into account the damages from lithuim mining. <br> <br>
 
-<br>
+(b) Assuming tax revenue does not get returned to consumers, are non-DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why? <br> <br> Non-DAC consumers are more likely to support this tax because it would be lower than the tax that only accounted for damages from lithium mining. Since Non-DAC consumers are more likely to purchase an EV, and they are not suffering any of the damages from lithium mining <br> <br>
 
-(b) Assuming tax revenue does not get returned to consumers, are non-DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
-<br>
-<br>
-Non-DAC consumers are more likely to support this tax because it would be lower than the tax that only accounted for damages from lithium mining. Since Non-DAC consumers are more likely to purchase an EV, and they are not suffering any of the damages from lithium mining
-
-<br>
-
-<br>
-
-(c) Assuming tax revenue does not get returned to consumers, are DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
-<br>
-<br>
-DAC consumers are more likely to not support this new tax because they are the ones experiencing harm from the lithium mining. If we compare this new tax to the tax where DAC consumers received a portion of the tax revenue back, and they wouldn't be receiving any tax benefits from this tax, they would oppose it. 
-
-
-
+(c) Assuming tax revenue does not get returned to consumers, are DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why? <br> <br> DAC consumers are more likely to not support this new tax because they are the ones experiencing harm from the lithium mining. If we compare this new tax to the tax where DAC consumers received a portion of the tax revenue back, and they wouldn't be receiving any tax benefits from this tax, they would oppose it.
 
 <br><br><br>
-
-

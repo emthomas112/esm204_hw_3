@@ -576,8 +576,8 @@ supp_slope &lt;- (50000)/q_agg(50000)
 ### 1.006612</code></pre>
 <p>Aggregate Annual Demand Equation If price &gt; 116854.835741: <br>
 Qagg = (158034.280239 - Price)/2.730926</p>
-<p>If price &lt;= 116854.835741): <br> Qagg = 75543.04 -
--0.5174292(Price)</p>
+<p>If price &lt;= 116854.835741: <br> Qagg = 75543.04 -
+0.5174292(Price)</p>
 <p>Supply Equation <br> Price = 1.006612(Qagg)</p>
 </div>
 <div id="what-is-the-benefit-to-producers-under-the-status-quo-what-is-the-environmental-cost-under-the-status-quo" class="section level4">
@@ -666,10 +666,10 @@ cs_dac_tax
 # 173,915,767</code></pre>
 <p>Benefit to DAC Consumers w/tax = <strong>$173,915,767</strong> <br>
 This is a decrease of <strong>$164,102,206</strong> from the non taxed
-CS of $338,017,973 overall welfare for DAC will be their benefit after
-the tax is implemented ($173,915,767) minus the environmental damage
-after the tax of $753,961,824. The DAC consumers will have an overall
-welfare of <strong>-$580,046,057</strong>.</p>
+CS of $338,017,973 The overall welfare for DAC will be their benefit
+after the tax is implemented ($173,915,767) minus the environmental
+damage after the tax of $753,961,824. The DAC consumers will have an
+overall welfare of <strong>-$580,046,057</strong>.</p>
 </div>
 <div id="e-benefit-to-ev-producers" class="section level4">
 <h4>(e) Benefit to EV producers</h4>
@@ -747,7 +747,6 @@ rev_500&lt;- q_agg(tax_500+50000)*tax_500
 <pre class="r"><code>## 350
 non_dac_q_350&lt;- q_non_dac(tax_350+50000)
 
-
 cs_non_dac_350 &lt;- 1/2*((158034.280239 - (tax_350+50000))*non_dac_q_350)
 cs_non_dac_350
 #1353624457
@@ -757,7 +756,6 @@ non_dac_welfare_350
 #2664149030</code></pre>
 <pre class="r"><code>## 400
 non_dac_q_400&lt;- q_non_dac(tax_400+50000)
-
 
 cs_non_dac_400 &lt;- 1/2*((158034.280239 - (tax_400+50000))*non_dac_q_400)
 cs_non_dac_400
@@ -769,7 +767,6 @@ non_dac_welfare_400
 <pre class="r"><code>## 450
 non_dac_q_450&lt;- q_non_dac(tax_450+50000)
 
-
 cs_non_dac_450 &lt;- 1/2*((158034.280239 - (tax_450+50000))*non_dac_q_450)
 cs_non_dac_450
 #1162533243
@@ -779,7 +776,6 @@ non_dac_welfare_450
 #1952839256</code></pre>
 <pre class="r"><code>## 500
 non_dac_q_500&lt;- q_non_dac(tax_500+50000)
-
 
 cs_non_dac_500 &lt;- 1/2*((158034.280239 - (tax_500+50000))*non_dac_q_500)
 cs_non_dac_500
@@ -885,35 +881,29 @@ non-DAC consumers. Qualitatively answer the following (in 1-3 sentences
 each):</p>
 <p><br></p>
 <ol style="list-style-type: lower-alpha">
-<li>How does the presence of climate change damages from gasoline cars
-affect the optimal EV tax in California? <br> <br> If we consider
+<li><p>How does the presence of climate change damages from gasoline
+cars affect the optimal EV tax in California? <br> <br> If we consider
 climate change damages there would be a societal benefit from the
 adoption of EVs. Depending on how large this benefit is calculated to
 be, it could potentially overwhelm the environmental harm from lithium
 mining. In this situation the optimal tax would be lower than if we just
-took into account the damages from lithuim mining. <br></li>
-</ol>
-<p><br></p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Assuming tax revenue does not get returned to consumers, are non-DAC
-consumers more or less likely to support this new tax, relative to the
-tax that only accounts for the mining externality? Why? <br> <br>
+took into account the damages from lithuim mining. <br> <br></p></li>
+<li><p>Assuming tax revenue does not get returned to consumers, are
+non-DAC consumers more or less likely to support this new tax, relative
+to the tax that only accounts for the mining externality? Why? <br> <br>
 Non-DAC consumers are more likely to support this tax because it would
 be lower than the tax that only accounted for damages from lithium
 mining. Since Non-DAC consumers are more likely to purchase an EV, and
-they are not suffering any of the damages from lithium mining</li>
-</ol>
-<p><br></p>
-<p><br></p>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>Assuming tax revenue does not get returned to consumers, are DAC
+they are not suffering any of the damages from lithium mining <br>
+<br></p></li>
+<li><p>Assuming tax revenue does not get returned to consumers, are DAC
 consumers more or less likely to support this new tax, relative to the
 tax that only accounts for the mining externality? Why? <br> <br> DAC
 consumers are more likely to not support this new tax because they are
 the ones experiencing harm from the lithium mining. If we compare this
 new tax to the tax where DAC consumers received a portion of the tax
 revenue back, and they wouldn’t be receiving any tax benefits from this
-tax, they would oppose it.</li>
+tax, they would oppose it.</p></li>
 </ol>
 <p><br><br><br></p>
 </div>
