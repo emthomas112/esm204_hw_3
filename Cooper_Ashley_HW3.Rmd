@@ -316,9 +316,9 @@ q_non_dac(50000)
 non_dac_q_350<- q_non_dac(tax_350+50000)
 
 
-cs_non_dac_350 <- 1/2*((158034.280239 - non_dac_q_350)*non_dac_q_350)
+cs_non_dac_350 <- 1/2*((158034.280239 - (tax_350+50000))*non_dac_q_350)
 cs_non_dac_350
-#1992220757
+#1353624457
 
 non_dac_welfare_350 <- cs_non_dac+(.7964228*rev_350)
 non_dac_welfare_350
@@ -331,13 +331,13 @@ non_dac_welfare_350
 non_dac_q_400<- q_non_dac(tax_400+50000)
 
 
-cs_non_dac_400 <- 1/2*((158034.280239 - non_dac_q_400)*non_dac_q_400)
+cs_non_dac_400 <- 1/2*((158034.280239 - (tax_400+50000))*non_dac_q_400)
 cs_non_dac_400
-#1936729801
+#1256262158
 
 non_dac_welfare_400 <- cs_non_dac_400+(.7964228*rev_400)
 non_dac_welfare_400
-#2671935932
+#1991468289
 ```
 
 ```{r}
@@ -345,13 +345,13 @@ non_dac_welfare_400
 non_dac_q_450<- q_non_dac(tax_450+50000)
 
 
-cs_non_dac_450 <- 1/2*((158034.280239 - non_dac_q_450)*non_dac_q_450)
+cs_non_dac_450 <- 1/2*((158034.280239 - (tax_450+50000))*non_dac_q_450)
 cs_non_dac_450
-#1879908388
+#1162533243
 
 non_dac_welfare_450 <- cs_non_dac_450+(.7964228*rev_450)
 non_dac_welfare_450
-#2670214401
+#1952839256
 ```
 
 
@@ -360,22 +360,22 @@ non_dac_welfare_450
 non_dac_q_500<- q_non_dac(tax_500+50000)
 
 
-cs_non_dac_500 <- 1/2*((158034.280239 - non_dac_q_500)*non_dac_q_500)
+cs_non_dac_500 <- 1/2*((158034.280239 - (tax_500+50000))*non_dac_q_500)
 cs_non_dac_500
-#1821756516
+#1072437710
 
 non_dac_welfare_500 <- cs_non_dac_500+(.7964228*rev_500)
 non_dac_welfare_500
-#2658984439
+#1909665633
 ```
 
 <br>
 Overall Welfare w/ no redistribution: \$1,454,620,139 <br>
-welfare w/ redistribution @ \$300: \$1,454,620,139 + .7964($753,961,824) = **\$2,055,075,336** <br>
-welfare w/ redistribution @ \$350: \$2,664,149,030      <br>
-welfare w/ redistribution @ \$400: \$2,671,935,932        <br>
-welfare w/ redistribution @ \$450: \$2,670,214,401          <br>
-welfare w/ redistribution @ \$500: \$2,658,984,439       <br>
+welfare w/ redistribution @ \$300:= \$1,454,620,139 + .7964($753,961,824) = **\$2,055,075,336** <br>
+welfare w/ redistribution @ \$350:= \$2,664,149,030     <br>
+welfare w/ redistribution @ \$400:= \$1,991,468,289     <br>
+welfare w/ redistribution @ \$450:= \$1,952,839,256     <br>
+welfare w/ redistribution @ \$500:= \$1,909,665,633     <br>
 
 
 #### (b) Overall welfare of DAC consumers
@@ -392,59 +392,108 @@ q_dac(50000)
 
 ```{r}
 ## 350
-tax_350 <- 350*63
+ 
+dac_q_350<- q_non_dac(tax_350+50000)
+
+
+cs_dac_350 <- 1/2*((116854.835741 - (tax_350+50000))*dac_q_350)
+cs_dac_350
+#705,348,946
+
+dac_welfare_350 <- cs_dac_350 - rev_350 +(.203577*rev_350)
+dac_welfare_350
+#33,420,504
+
 ```
 
 
 ```{r}
 ## 400
-tax_400 <- 400*63
+dac_q_400<- q_non_dac(tax_400+50000)
+
+
+cs_dac_400 <- 1/2*((116854.835741 - (tax_400+50000))*dac_q_400)
+cs_dac_400
+#631,735,964
+
+dac_welfare_400 <- cs_dac_400 - rev_400 +(.203577*rev_400)
+dac_welfare_400
+#-103470351
 ```
 
 ```{r}
 ## 450
-tax_450 <- 450*63
+dac_q_450<- q_non_dac(tax_450+50000)
+
+
+cs_dac_450 <- 1/2*((116854.835741 - (tax_450+50000))*dac_q_450)
+cs_dac_450
+#561756364
+
+dac_welfare_450 <- cs_dac_450 - rev_450 +(.203577*rev_450)
+dac_welfare_450
+#-228549848
 ```
 
 
 ```{r}
 ## 500
-tax_500 <- 500*63
+dac_q_500<- q_non_dac(tax_500+50000)
+
+
+cs_dac_500 <- 1/2*((116854.835741 - (tax_500+50000))*dac_q_500)
+cs_dac_500
+#495410148
+
+dac_welfare_500 <- cs_dac_500 - rev_500 +(.203577*rev_500)
+dac_welfare_500
+#-341817985
 ```
 
 
 <br>
 Overall Welfare w/ no redistribution: -\$580,046,057 <br>
 welfare w/ redistribution @ \$300: -\$580,046,057 + .2036($753,961,824) = **-\$426,539,430** <br>
-welfare w/ redistribution @ \$350:-\$ + .2036($) =     <br>
-welfare w/ redistribution @ \$400:-\$ + .2036($) =    <br>
-welfare w/ redistribution @ \$450:-\$ + .2036($) =     <br>
-welfare w/ redistribution @ \$500: -\$ + .2036($) =    <br>
+welfare w/ redistribution @ \$350:= \$33,420,504   <br>
+welfare w/ redistribution @ \$400:= -\$103,470,351   <br>
+welfare w/ redistribution @ \$450:= -\$228,549,848   <br>
+welfare w/ redistribution @ \$500:= -\$341,817,985   <br>
 
 
 
 #### (c) EV producers
 
 ```{r}
-.## 350
-ps_350 <- 1/2*68900*39892.16
+## 350
+ps_350 <- 1/2*(tax_350+50000)*q_agg(tax_350+50000)
+#1378397977
 ```
 
 ```{r}
 ## 400
-ps_400 <- 1/2*68900*39892.16
+ps_400 <- 1/2*(tax_400+50000)*q_agg(tax_400+50000)
+#1377376723
 ```
 
 ```{r}
 ## 450
-ps_450 <- 1/2*68900*39892.16
+ps_450 <- 1/2*(tax_450+50000)*q_agg(tax_450+50000)
+#1371221278
 ```
 
 
 ```{r}
 ## 500
-ps_500 <- 1/2*68900*39892.16
+ps_500 <- 1/2*(tax_500+50000)*q_agg(tax_500+50000)
+#1359931642
 ```
+
+
+Producer Surplus @ \$350: = \$1,378,397,977   <br>
+Producer Surplus @ \$400: = \$1,377,376,723   <br>
+Producer Surplus @ \$450: = \$1,371,221,278   <br>
+Producer Surplus @ \$500: = \$1,359,931,642   <br>
+
 
 
 ### Question 7
