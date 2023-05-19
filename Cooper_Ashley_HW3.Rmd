@@ -18,7 +18,9 @@ library(here)
 library(cowplot)
 ```
 
-### Question 1
+## ESM 204 HW 3 {.tabset}
+
+### Question 1 {.tabset}
 
 #### Run linear regressions (with an intercept) to estimate the demand curves for DAC and non-DAC consumers. What are 2-3 reasons you can think that may explain the differences in demand you estimate?
 
@@ -56,16 +58,20 @@ demand_plot
 ```
 
 Price = 116854.835741 - 6.611437(QDAC)
+<br>
 
 6.611437(QDAC) = 116854.835741 - Price
 
 
 
 [*QDAC = (116854.835741 - Price)/6.611437*]{.underline}
+<br>
 
 Price = 158034.280239 - 2.730926(QNonDAC)
+<br>
 
 2.730926(QNonDAC) = 158034.280239 - Price
+<br>
 
 [*QNonDAC = (158034.280239 - Price)/2.730926*]{.underline}
 
@@ -77,13 +83,13 @@ Price = 158034.280239 - 2.730926(QNonDAC)
 
 <br>
 
-### Question 2
-
-#### One kilogram (kg) of lithium is estimated to cause \$300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
+### Question 2 
+<br>
+One kilogram (kg) of lithium is estimated to cause \$300 dollars worth of damage in health costs to local communities living near mines. Each EV requires a lithium ion battery containing 63kg of lithium. Assuming there are no other externalities caused by EV production, what is the marginal externality cost per EV produced?
 
 [*MEC = \$300/kg \* 63kg/car MEC = \$18,900*]{.underline}
 
-### Question 3
+### Question 3 {.tabset}
 
 #### What is the aggregate annual demand curve for EVs? What is the supply curve for EVs?
 
@@ -131,13 +137,13 @@ supp_slope <- (50000)/q_agg(50000)
 ```
 
 Aggregate Annual Demand Equation
-If price > 116854.835741:
+If price > 116854.835741: <br>
     Qagg = (158034.280239 - Price)/2.730926
 
-If price <= 116854.835741):
+If price <= 116854.835741): <br>
     Qagg = 75543.04 - -0.5174292(Price)
 
-Supply Equation
+Supply Equation <br>
 Price = 1.006612(Qagg)
 
 #### What is the "benefit" to producers under the status quo? What is the environmental cost under the status quo?
@@ -153,6 +159,7 @@ ps <- 1/2*50000*49671.58
 ```
 
 Benefit to Consumers = Consumer Surplus = $2,474,913,243
+<br>
 
 Benefit to Producers = Producer Surplus = $1,241,789,500
 
@@ -166,7 +173,8 @@ env_cost <- 18900 * 49671.58
 ```
 Environmental Costs = $938,792,862
 
-### Question 4
+### Question 4 {.tabset}
+
 #### How is the current consumer benefit divided between DAC and non-DAC consumers?
 ```{r}
 cs_dac <- 1/2*(116854.835741 - 50000)*q_dac(50000)
@@ -185,14 +193,16 @@ consumer_benefit_non_dac <- cs_non_dac/cs
 
 Currently disadvantaged communities get ~13.66% of the total consumer benefits from EVs, while non-disadvantaged communities enjoy ~86.34% of the total consumer benefits.
 
-### Question 5
+### Question 5 {.tabset}
+<br> 
+
 #### Derive the optimal EV tax (in $ per vehicle) to internalize the lithium mining externality.
 
 Optimal Tax = MEC at Q*
 
-Because MEC is constant, optimal tax = $18,900/EV
+Because MEC is constant, optimal tax = \$18,900/EV
 
-#### Noting that recent research has shown that DACs are far more likely to contain mining activity, assume that the mining externality is borne entirely by the DAC group. What would be the effects of this tax on (a) The amount of EVs produced and consumed
+
 
 ```{r}
 q_agg(50000)
@@ -204,11 +214,13 @@ q_agg(68900)
 q_agg(50000) - q_agg(68900)
 # 9779.412
 ```
+
+#### (a) The amount of EVs produced and consumed
 The quantity of EVs would decrease by **~ 9,780** cars, from 49,672 EVs to **39,892 EVs**.
 
 #### (b) The price of EVs
 
-The price of each EV would increase by **$18,900** from $50,000 to **$68,900**.
+The price of each EV would increase by **$18,900** from \$50,000 to **\$68,900**.
 
 #### (c) Overall welfare of non-DAC consumers
 ```{r}
@@ -217,7 +229,8 @@ cs_non_dac_tax <- 1/2*(158034.280239 - 68900)*q_non_dac(68900)
 ```
 
 Benefit to non-DAC Consumers w/tax = **$1,454,620,139**
-This is a decrease of **$682,275,131** from a non taxed CS of $2,136,895,270 
+<br>
+This is a decrease of **$682,275,131** from a non taxed CS of $\2,136,895,270 
 
 
 #### (d) Overall welfare of DAC consumers
@@ -227,9 +240,10 @@ cs_dac_tax
 # 173,915,767
 ```
 
-Benefit to DAC Consumers w/tax = **$173,915,767**
-This is a decrease of **$164,102,206** from the non taxed CS of $338,017,973 
-overall welfare for DAC will be their benefit after the tax is implemented (\$173,915,767) minus the environmental damage after the tax of $753,961,824. The DAC consumers will have an overall welfare of **-\$580,046,057**. 
+Benefit to DAC Consumers w/tax = **\$173,915,767**
+<br>
+This is a decrease of **\$164,102,206** from the non taxed CS of $338,017,973 
+overall welfare for DAC will be their benefit after the tax is implemented (\$173,915,767) minus the environmental damage after the tax of \$753,961,824. The DAC consumers will have an overall welfare of **-\$580,046,057**. 
 
 
 #### (e) Benefit to EV producers
@@ -241,8 +255,8 @@ ps_tax <- 1/2*68900*39892.16
 #1,374,284,912
 ```
 
-Benefit to Producers w/tax = **$1,374,284,912**
-This is a decrease of **$ 132,495,412**from the non taxed PS of $1,241,789,500 
+Benefit to Producers w/tax = **\$1,374,284,912**
+This is a decrease of **\$ 132,495,412**from the non taxed PS of \$1,241,789,500 
 
 
 #### (f) Total environmental damage
@@ -264,11 +278,11 @@ This is a decrease of **$184,831,038** from the non taxed PS of $938,792,862
 
 #### (g) Total tax revenue generated
 <br>
-Total tax revenue generated is the same as the total environmental damage, $184,831,038 because the optimal tax was evaluated to cover all of the environmental damage.
+Total tax revenue generated is the same as the total environmental damage, **$184,831,038** because the optimal tax was evaluated to cover all of the environmental damage.
 
-### Question 6
+### Question 6 {.tabset}
 
-#### Now, assume that all revenue from the EV tax will be redistributed to the consumers in proportion to their pre-tax consumption. For example, if 80% of the EVs were consumed by non-DAC consumers, then they get 80% of the tax revenue. Additionally, consider that emerging scientific evidence suggests the true environmental damages from lithium mining may be much higher than $300. For a range of values of external costs per kg of lithium ($350, $400, $450, and $500 per kg), calculate the effects of an EV tax on:1
+<br> Now, assume that all revenue from the EV tax will be redistributed to the consumers in proportion to their pre-tax consumption. For example, if 80% of the EVs were consumed by non-DAC consumers, then they get 80% of the tax revenue. Additionally, consider that emerging scientific evidence suggests the true environmental damages from lithium mining may be much higher than \$300. For a range of values of external costs per kg of lithium (\$350, \$400, \$450, and \$500 per kg), calculate the effects of an EV tax on:
 
 ```{r}
 ## 350
@@ -496,21 +510,31 @@ Producer Surplus @ \$500: = \$1,359,931,642   <br>
 
 
 
-### Question 7
+### Question 7 
 
-#### Now, consider the fact that the purchase of EVs not only leads to lithium mining, but also helps mitigate climate change by replacing gasoline cars. Suppose that climate change damages fall mostly outside California, to a lesser extent on DAC consumers, and not at all on non-DAC consumers. Qualitatively answer the following (in 1-3 sentences each):
+<br> Now, consider the fact that the purchase of EVs not only leads to lithium mining, but also helps mitigate climate change by replacing gasoline cars. Suppose that climate change damages fall mostly outside California, to a lesser extent on DAC consumers, and not at all on non-DAC consumers. Qualitatively answer the following (in 1-3 sentences each):
 
+<br>
 
-#### (a) How does the presence of climate change damages from gasoline cars affect the optimal EV tax in California?
+(a) How does the presence of climate change damages from gasoline cars affect the optimal EV tax in California?
+<br>
 <br>
 If we consider climate change damages there would be a societal benefit from the adoption of EVs. Depending on how large this benefit is calculated to be, it could potentially overwhelm the environmental harm from lithium mining. In this situation the optimal tax would be lower than if we just took into account the damages from lithuim mining. 
 <br>
-#### (b) Assuming tax revenue does not get returned to consumers, are non-DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
+
+<br>
+
+(b) Assuming tax revenue does not get returned to consumers, are non-DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
+<br>
 <br>
 Non-DAC consumers are more likely to support this tax because it would be lower than the tax that only accounted for damages from lithium mining. Since Non-DAC consumers are more likely to purchase an EV, and they are not suffering any of the damages from lithium mining
 
 <br>
-#### (c) Assuming tax revenue does not get returned to consumers, are DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
+
+<br>
+
+(c) Assuming tax revenue does not get returned to consumers, are DAC consumers more or less likely to support this new tax, relative to the tax that only accounts for the mining externality? Why?
+<br>
 <br>
 DAC consumers are more likely to not support this new tax because they are the ones experiencing harm from the lithium mining. If we compare this new tax to the tax where DAC consumers received a portion of the tax revenue back, and they wouldn't be receiving any tax benefits from this tax, they would oppose it. 
 
